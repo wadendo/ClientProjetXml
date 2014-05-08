@@ -1,3 +1,5 @@
+package UserInterface;
+
 import cv.*;
 
 import javax.xml.bind.JAXBContext;
@@ -26,7 +28,7 @@ public class PutRequest {
     public PutRequest() {
         try {
             jc = JAXBContext.newInstance(Resume.class, Experiences.class,
-                    Competences.class, ResumeLangue.class , String.class);
+                    Competences.class, ResumeLangue.class , ResumeLoisirs.class,String.class);
         } catch (JAXBException je) {
             System.out.println("Cannot create JAXBContext " + je);
         }
