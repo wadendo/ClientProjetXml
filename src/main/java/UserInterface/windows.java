@@ -160,7 +160,7 @@ public class windows {
     	String listCVString;
 	 	ID = new LinkedList<String>();
 		try {
-			listCVString = windows.get("http://localhost:8080/SpringMVC/rest/Resume");
+			listCVString = windows.get("http://wadecvxml.wadendo.cloudbees.net/rest/Resume");
 			//System.out.println(listCVString); 
 			Node myNode = ParsDOM.ConvertStringToNode(listCVString);
 			System.out.println(myNode.getNodeName());
@@ -210,7 +210,7 @@ public class windows {
 				
 					 try {
 						 
-						result = windows.get("http://localhost:8080/SpringMVC/rest/Resume");
+						result = windows.get("http://wadecvxml.wadendo.cloudbees.net/rest/Resume");
 						text.setText(message);
 						} catch (IOException e) {
 						// TODO Auto-generated catch block
@@ -247,14 +247,14 @@ public class windows {
 						
 							 List<String> myList = new LinkedList<String>();
 							 String result;
-							result = windows.get("http://localhost:8080/SpringMVC/rest/Resume/" + leafts);
+							result = windows.get("http://wadecvxml.wadendo.cloudbees.net/rest/Resume/" + leafts);
 							Node myNode = ParsDOM.ConvertStringToNode(result);
 							 ParsDOM.Idrecup(myNode, myList, "nom");
 							  String nom = myList.get(0);
 							  myList.clear();
 							  ParsDOM.Idrecup(myNode, myList, "prenom");
 							  String prenom = myList.get(0);myList.clear();
-							  ParsDOM.Idrecup(myNode, myList, "experience");
+							  ParsDOM.Idrecup(myNode, myList, "experiences");
 
 							  String exp1 = myList.get(0);
 							  String exp2 = myList.get(1);
@@ -282,12 +282,12 @@ public class windows {
 							  
 								 
 							  String loisir1 = myList.get(0);
-							  String loisir2 = myList.get(1);
+							 // String loisir2 = myList.get(1);
 							 // String loisir3 = myList.get(2);
 							  myList.clear();
 							  String CVdom = new String();
 							  String NewLigne = System.getProperty("line.separator");
-							  CVdom = "Nom :"+ nom + NewLigne + "Prenom :" + prenom +  NewLigne + "Experiences :" + NewLigne + exp1 + NewLigne+ exp2 + NewLigne + "Competences :" + NewLigne + com1 + NewLigne+ com2 + NewLigne  +"Langues :" + NewLigne + lan1 + NewLigne+ lan2 + NewLigne + "Loisirs :" + NewLigne + loisir1 + NewLigne+ loisir2   ;
+							  CVdom = "Nom :"+ nom + NewLigne + "Prenom :" + prenom +  NewLigne + "Experiences :" + NewLigne + exp1 + NewLigne+ exp2 + NewLigne + "Competences :" + NewLigne + com1 + NewLigne+ com2 + NewLigne  +"Langues :" + NewLigne + lan1 + NewLigne+ lan2 + NewLigne + "Loisirs :" + NewLigne + loisir1   ;
 							  
 							  text.setText(CVdom);
 						  

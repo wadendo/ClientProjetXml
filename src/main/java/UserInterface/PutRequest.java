@@ -23,7 +23,7 @@ public class PutRequest {
     private JAXBContext jc;
 
     private static final QName qname = new QName("", "");
-    private static final String url = "http://localhost:8080/SpringMVC/rest/Resume";
+    private static final String url = "http://wadecvxml.wadendo.cloudbees.net/rest/Resume";
 
     public PutRequest() {
         try {
